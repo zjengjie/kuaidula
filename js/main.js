@@ -24,14 +24,15 @@ $(function(){
 	} else {
 		localStorage['speed'] = 12;
 	}
-	function reset(){
+	function reset(deleteinput){
 		i = 0;
 		sentence = "";
-		$('#input').val("");
+		if (deleteinput)
+			$('#input').val("");
 		$('#go').text('快读啦').removeClass('btn-danger').addClass('btn-success');
 		window.clearInterval(running);
 		running = null;
-		$('#display').text('快读啦');
+		$('#display').text('读完啦');
 	}
 	$('#display').fitText(0.4);
 	function holdPosition(){
@@ -54,9 +55,7 @@ $(function(){
 				$('#display').text(((sentence.length > i)? sentence[i] : "") + ((sentence.length > i + 1)? sentence[i + 1] : "") + ((sentence.length > i + 2)? sentence[i + 2] : ""));
 				i = i + 1;
 				if (i >= sentence.length) {
-					window.clearInterval(running);
-					running = null;
-					$('#display').text('读完啦');
+					reset(false);
 				}
 			}, 1000 / parseInt($('#speed').val()));
 			$('#go').text('暂停').removeClass('btn-success').addClass('btn-danger');
