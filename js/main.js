@@ -54,7 +54,9 @@ $(function(){
 				$('#display').text(((sentence.length > i)? sentence[i] : "") + ((sentence.length > i + 1)? sentence[i + 1] : "") + ((sentence.length > i + 2)? sentence[i + 2] : ""));
 				i = i + 1;
 				if (i >= sentence.length) {
-					reset();
+					window.clearInterval(running);
+					running = null;
+					$('#display').text('读完啦');
 				}
 			}, 1000 / parseInt($('#speed').val()));
 			$('#go').text('暂停').removeClass('btn-success').addClass('btn-danger');
@@ -66,7 +68,7 @@ $(function(){
 	}
 	$('#reset').click(reset);
 
-	$('#input').text("十九八七六五四三二一开始！欢迎使用“快读啦”，相信大家已经明白怎么使用了，请尽兴！");
+	$('#input').text("十九八七六五四三二一开始！欢迎使用“快读啦”，你可以不用移动你的眼球就能阅读，相信大家已经明白怎么使用了，请尽兴！");
 	$('#input').trigger('change');
 	$('#go').trigger('click');
 });
