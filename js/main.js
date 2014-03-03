@@ -36,7 +36,12 @@ $(function(){
 	$('#input').change(function(){
 		sentence = ToDBC($('#input').val());
 	});	
-	$('#go').click(function(){
+	$('#go').click(pause);
+	$('#speed').change(function(){
+		pause();
+		pause();
+	});
+	function pause(){
 		if (running == null) {
 			running = window.setInterval(function(){
 				$('#display').text(((sentence.length > i)? sentence[i] : "") + ((sentence.length > i + 1)? sentence[i + 1] : "") + ((sentence.length > i + 2)? sentence[i + 2] : ""));
@@ -44,14 +49,14 @@ $(function(){
 				if (i >= sentence.length) {
 					reset();
 				}
-			}, 120);
+			}, 1000 / parseInt($('#speed').val()));
 			$('#go').text('暂停').removeClass('btn-success').addClass('btn-danger');
 		} else {
 			window.clearInterval(running);
 			running = null;
 			$('#go').text('快读啦').removeClass('btn-danger').addClass('btn-success');
 		}
-	});
+	}
 	$('#reset').click(reset);
 
 
