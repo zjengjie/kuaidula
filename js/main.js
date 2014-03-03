@@ -26,9 +26,10 @@ $(function(){
 	}
 	function reset(deleteinput){
 		i = 0;
-		sentence = "";
-		if (deleteinput)
+		if (deleteinput) {
+			sentence = "";
 			$('#input').val("");
+		}
 		$('#go').text('快读啦').removeClass('btn-danger').addClass('btn-success');
 		window.clearInterval(running);
 		running = null;
