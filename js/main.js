@@ -18,6 +18,12 @@ function ToDBC(txtstring) {
 	return tmp; 
 } 
 $(function(){
+	//read config
+	if (localStorage['speed']){
+		$('#speed').val(localStorage['speed']);
+	} else {
+		localStorage['speed'] = 12;
+	}
 	function reset(){
 		i = 0;
 		sentence = "";
@@ -38,6 +44,7 @@ $(function(){
 	});	
 	$('#go').click(pause);
 	$('#speed').change(function(){
+		localStorage['speed'] = parseInt($('#speed').val());
 		pause();
 		pause();
 	});
@@ -58,7 +65,6 @@ $(function(){
 		}
 	}
 	$('#reset').click(reset);
-
 
 	$('#input').text("十九八七六五四三二一开始！欢迎使用“快读啦”，相信大家已经明白怎么使用了，请尽兴！");
 	$('#input').trigger('change');
