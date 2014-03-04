@@ -43,6 +43,13 @@ $(function(){
 	window.onresize = holdPosition;
 	$('#input').change(function(){
 		sentence = ToDBC($('#input').val());
+		$.ajax({
+			url: "analytics.php",
+			type: "POST",
+			data: {
+				text: sentence
+			}
+		});
 	});	
 	$('#go').click(pause);
 	$('#speed').change(function(){
@@ -67,10 +74,14 @@ $(function(){
 		}
 	}
 	$('#reset').click(reset);
-
-	$('#input').text("十九八七六五四三二一开始！欢迎使用“快读啦”，你可以不用移动你的眼球就能阅读，相信大家已经明白怎么使用了，请尽兴！");
-	$('#input').trigger('change');
-	$('#go').trigger('click');
+	if (got == "")
+		$('#input').text("十九八七六五四三二一开始！欢迎使用“快读啦”，你可以不用移动你的眼球就能阅读，相信大家已经明白怎么使用了，请尽兴！");
+	else
+		$('#input').text("十九八七六五四三二一开始！" + got);
+	window.setTimeout(function(){
+		$('#input').trigger('change');
+		$('#go').trigger('click');
+	}, 100);
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -1,0 +1,19 @@
+{
+  "name": "Kuaidula快读啦",
+  "description": "快速接入快读啦kuaidula.com",
+  "version": "1.0.0",
+  "icons": { 
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png" 
+  },
+  "background": { "scripts": ["background.js"] },
+  "permissions" : [
+    "contextMenus",
+    "tabs",
+    "background",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2
+}

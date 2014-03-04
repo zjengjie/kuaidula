@@ -1,0 +1,20 @@
+<script type="text/javascript">// <![CDATA[
+    //
+    // first declare the function we want to run when our menu item is clicked
+    //
+    function kuaidula(info)
+    {
+        var highlightedtext = info.selectionText;
+        chrome.tabs.create({url: "http://kuaidula.com/" + highlightedtext})
+    }
+ 
+    //
+    // Now that we have a function to call (searchwiktionary)
+    // Add a menu item to the contextMenu...
+    //
+    chrome.contextMenus.create(
+        {title: "快读啦", // the title to add to the menu
+        contexts:["selection"], // only add if there is a selection
+        onclick: kuaidula}); // the code to run when the title is clicked
+ 
+// ]]></script>

@@ -9,6 +9,13 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/jquery.fittext.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript">
+var got = unescape("<?php 
+if ($_POST['text'] && $_POST['text'] != "") {
+	echo $_POST['text'];
+}
+?>");
+		</script>
 	</head>
 	<body>
 		<div class="container">
@@ -16,6 +23,9 @@
 				<div class="col-md-4 col-md-offset-4 col-xs-12">
 					<div id="display" style="text-align: center">快读吧</div>
 					<hr />
+					<div style="text-align: center">
+						<small style="font-size: 8px;">快读啦，让你不用移动眼睛，不用靠近屏幕就能阅读，保护视力，从快读啦做起。</small>
+					</div>
 					<textarea id="input" placeholder="请在此处输入想要阅读的文字" style="width: 100%"></textarea>
 					<div style="text-align: center; margin-top: 3px;">
 						<label>Speed:</label>
@@ -38,12 +48,17 @@
 			<div class="row" style="text-align: center">
 				<h6>Thank you for using our product, did it help you speed up? :-) Take a look at the following, you may have insterest :-)</h6>
 				<hr>
-				<div class="col-sm-6">
+				<div class="col-sm-3">
 					<a href="https://chrome.google.com/webstore/detail/preview-it/hlnfkjhomcppkfeioacmjjenhlgcbflj" class="btn btn-default btn-sm">Preview It</a>
 					<br>
 					 - a chrome extension to preview pages in popup small window
 				</div>
 				<div class="col-sm-6">
+					<a href="https://chrome.google.com/webstore/detail/kuaidula%E5%BF%AB%E8%AF%BB%E5%95%A6/eciblbmhipceenpjandbgolgdndlbple" class="btn btn-default btn-sm">快读啦</a>
+					<br>
+					 - 快读啦谷歌浏览器插件
+				</div>
+				<div class="col-sm-3">
 					<a href="http://timesheettyu.ideati.me/" class="btn btn-default btn-sm">TimeSheettyU</a>
 					<br>
 					 - Help you import your CityU Schedule into your phone, weeks differ from weeks
