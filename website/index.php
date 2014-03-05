@@ -64,6 +64,10 @@ if ($_POST['text'] && $_POST['text'] != "") {
 					 - Help you import your CityU Schedule into your phone, weeks differ from weeks
 				</div>
 			</div>
+			<div class="row" style="text-align: center">
+				<h6>据有关调查，我国教学大纲要求高中生阅读速度为600汉字每分钟（10字/秒），快读啦为您推荐每分钟720字（12字/秒）的阅读速度，相当于大学生的阅读速度700汉字每分钟。</h6>
+				<h6>经过一段时间的使用和练习，用户的阅读速度可以逐渐由720字每分钟提高到1080字每分钟，以此速度，一个半小时便可读完一本十万字的小说。</h6>
+			</div>
 		</div>
 	</body>
 </html>
