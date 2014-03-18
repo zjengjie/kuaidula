@@ -43,13 +43,6 @@ $(function(){
 	window.onresize = holdPosition;
 	$('#input').change(function(){
 		sentence = ToDBC($('#input').val());
-		$.ajax({
-			url: "analytics.php",
-			type: "POST",
-			data: {
-				text: sentence
-			}
-		});
 	});	
 	$('#go').click(pause);
 	$('#speed').change(function(){
