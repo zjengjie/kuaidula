@@ -21,7 +21,7 @@ if ($_POST['text'] && $_POST['text'] != "") {
 		<div class="container">
 			<div class="row" id="main">
 				<div class="col-md-4 col-md-offset-4 col-xs-12">
-					<div id="display" style="text-align: center">快读吧</div>
+					<div id="display" style="text-align: center">快读啦</div>
 					<hr />
 					<div style="text-align: center">
 						<small style="font-size: 8px;">快读啦，让你不用移动眼睛，不用靠近屏幕就能阅读，保护视力，从快读啦做起。</small>

@@ -1,0 +1,7 @@
+.box-container {
+	height: 400px;
+	width: 700px;
+	position: fixed;
+	border: 0;
+	z-index: 999999;
+}

@@ -15,5 +15,12 @@
     "http://*/*",
     "https://*/*"
   ],
+  "content_scripts":[
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css":["main.css"],
+      "js": ["jquery.min.js", "main.js"]
+    }
+  ],
   "manifest_version": 2
 }
