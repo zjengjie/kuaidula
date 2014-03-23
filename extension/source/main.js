@@ -15,10 +15,12 @@ function ReadWindow(got){
         $(eleContainer).addClass("box-container").css('left',position_left+"px").css('top',position_top+"px"); 
         $(eleContainer).css('box-shadow','10px 10px 5px #888');
         //from kuaidula.com index.php
+        $(eleContainer).append("<div><button id='close'>X</button></div>");
         $(eleContainer).append("<div id='display' style='text-align: center;margin-top:90px'>快读啦</div>");
         $(eleContainer).append("<textarea id='input' placeholder='请在此处输入想要阅读的文字' style='width: 100%; align-content:center; text-align:center' '></textarea>");
         $(eleContainer).append("<div style='text-align: center; margin-top: 3px;'><label>Speed:</label><input value='12' type='number' id='speed' style='width: 70px;'>字/秒</div>");
         $(eleContainer).append("<div class='row'><div style='align-content:center;text-align: center'><button id='go' style='width: 50%;text-align: center; align-content:center'>快读啦</button></div><div style='align-content:center;text-align: center'><button id='reset' style='width: 50%' >重置</button></div></div>");
+        
         //from kuaidula.com main.js
         var running;
         var i = 0;
@@ -92,7 +94,12 @@ function ReadWindow(got){
         });
         $("body").append(eleContainer);
         $(eleContainer).fadeIn(200);
+        $("#close").click(function(){
+            $(".box-container").remove();
+        });
     }
+
+
 
 (function( $ ){
 

@@ -1,4 +1,5 @@
 .box-container {
+	display: none;
 	height: 300px;
 	width: 600px;
 	position: fixed;
