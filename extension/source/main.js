@@ -101,5 +101,5 @@ function ReadWindow(got) {
     $("#close").click(function () {
         $(".box-container").remove();
     });
-    $('#input').val("十九八七六五四三二一开始！" + ToDBC(got));
+    $('#input').val("五四三二一开始！" + ToDBC(got));
 }
