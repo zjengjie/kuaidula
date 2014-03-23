@@ -2,6 +2,10 @@
 	display: none;
 	height: 300px;
 	width: 600px;
+	top: 50%;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: -150px;
 	position: fixed;
 	border: 2;
 	z-index: 999;
