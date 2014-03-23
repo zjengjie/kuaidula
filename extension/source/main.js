@@ -63,10 +63,9 @@ function ReadWindow(got) {
     var eleContainer = document.createElement("div");
     this.eleContainer = eleContainer;
     $(eleContainer).addClass("box-container");
-    $(eleContainer).css('box-shadow', '0px 0px 10px rgba(0, 0, 0, .5)');
     //from kuaidula.com index.php
     $(eleContainer).append("<div><button id='close'>X</button></div>");
-    $(eleContainer).append("<div id='display' style='text-align: center; font-size: 120px'>快读啦</div>");
+    $(eleContainer).append("<div id='display'>快读啦</div>");
     $(eleContainer).append("<div style='text-align: center'><textarea id='input' placeholder='请在此处输入想要阅读的文字' style='width: 80%;'></textarea></div>");
     $(eleContainer).append("<div style='text-align: center; margin-top: 3px;'><label>Speed:</label><input value='12' type='number' id='speed' style='width: 70px;'>字/秒</div>");
     $(eleContainer).append("<div class='row'><div style='align-content:center;text-align: center'><button id='go' style='width: 50%;text-align: center; align-content:center'>快读啦</button></div><div style='align-content:center;text-align: center'><button id='reset' style='width: 50%' >重置</button></div></div>");
@@ -104,38 +103,3 @@ function ReadWindow(got) {
     });
     $('#input').val("十九八七六五四三二一开始！" + ToDBC(got));
 }
-
-
-
-(function ($) {
-
-    $.fn.fitText = function (kompressor, options) {
-
-        // Setup options
-        var compressor = kompressor || 1,
-            settings = $.extend({
-                'minFontSize': Number.NEGATIVE_INFINITY,
-                'maxFontSize': Number.POSITIVE_INFINITY
-            }, options);
-
-        return this.each(function () {
-
-            // Store the object
-            var $this = $(this);
-
-            // Resizer() resizes items based on the object width divided by the compressor * 10
-            var resizer = function () {
-                $this.css('font-size', Math.max(Math.min($this.width() / (compressor * 10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
-            };
-
-            // Call once to set.
-            resizer();
-
-            // Call on resize. Opera debounces their resize by default.
-            $(window).on('resize.fittext orientationchange.fittext', resizer);
-
-        });
-
-    };
-
-})(jQuery);

@@ -10,6 +10,12 @@
 	border: 2;
 	z-index: 999;
     background-color: antiquewhite;
+    box-shadow: 0px 0px 400px 100px rgba(0, 0, 0, .5);
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.box-container #display {
+	text-align: center; 
+	font-size: 120px;
 }
