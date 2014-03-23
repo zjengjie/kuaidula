@@ -25,7 +25,6 @@ function kuaidula(info)
             keyCode: highlightedtext
         });
     });
-    
     //chrome.tabs.create({url: "javascript:" + fakePostCode + "; fakePost('" + escape(highlightedtext) + "');"})
 }
 

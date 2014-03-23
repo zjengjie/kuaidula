@@ -87,6 +87,7 @@ function ReadWindow(got){
         }
         $('#reset').click(reset);
             $('#input').text("十九八七六五四三二一开始！" + got);
+            debugger;//在这里第一次读的时候 got 收到了数据，但是不知道为什么就是不读 我感觉得应该用function把textarea 的 value改变才对吧？
         window.setTimeout(function(){
             $('#input').trigger('change');
             $('#go').trigger('click');
@@ -94,6 +95,7 @@ function ReadWindow(got){
         });
         $("body").append(eleContainer);
         $(eleContainer).fadeIn(200);
+        debugger;
         $("#close").click(function(){
             $(".box-container").remove();
         });
