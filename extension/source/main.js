@@ -1,3 +1,4 @@
+var running, i, sentence;
 chrome.runtime.onMessage.addListener(
     function (request) {
         console.log('Load successful');
@@ -65,46 +66,43 @@ function ReadWindow(got) {
     $(eleContainer).css('box-shadow', '0px 0px 10px rgba(0, 0, 0, .5)');
     //from kuaidula.com index.php
     $(eleContainer).append("<div><button id='close'>X</button></div>");
-    $(eleContainer).append("<div id='display' style='text-align: center;margin-top:90px'>快读啦</div>");
+    $(eleContainer).append("<div id='display' style='text-align: center; font-size: 120px'>快读啦</div>");
     $(eleContainer).append("<div style='text-align: center'><textarea id='input' placeholder='请在此处输入想要阅读的文字' style='width: 80%;'></textarea></div>");
     $(eleContainer).append("<div style='text-align: center; margin-top: 3px;'><label>Speed:</label><input value='12' type='number' id='speed' style='width: 70px;'>字/秒</div>");
     $(eleContainer).append("<div class='row'><div style='align-content:center;text-align: center'><button id='go' style='width: 50%;text-align: center; align-content:center'>快读啦</button></div><div style='align-content:center;text-align: center'><button id='reset' style='width: 50%' >重置</button></div></div>");
 
-    var running; //indicating whether it is reading
-    var i = 0; //which character is being read
-    var sentence = ""; //read content
-    $(function () {
-        //read config
-        if (localStorage['speed']) {
-            $('#speed').val(localStorage['speed']);
-        } else {
-            localStorage['speed'] = 12;
-        }
-        $('#display').fitText(0.4);
-        $('#input').change(function () {
-            sentence = ToDBC($('#input').val());
-        });
-        $('#go').click(pause);
-        $('#speed').change(function () {
-            localStorage['speed'] = parseInt($('#speed').val());
-            pause();
-            pause();
-        });
-        $('#reset').click(reset);
-        $('#input').text("十九八七六五四三二一开始！" + got);
-        debugger; //在这里第一次读的时候 got 收到了数据，但是不知道为什么就是不读 我感觉得应该用function把textarea 的 value改变才对吧？
-        window.setTimeout(function () {
-            $('#input').trigger('change');
-            $('#go').trigger('click');
-        }, 100);
-    });
+
+    running = null; //indicating whether it is reading
+    i = 0; //which character is being read
+    sentence = ""; //read content
+    //read config
     $("body").append(eleContainer);
+    if (localStorage['speed']) {
+        $('#speed').val(localStorage['speed']);
+    } else {
+        localStorage['speed'] = 12;
+    }
+    $('#input').change(function () {
+        sentence = ToDBC($('#input').val());
+    });
+    $('#speed').change(function () {
+        localStorage['speed'] = parseInt($('#speed').val());
+        pause();
+        pause();
+    });
+    $('#go').click(pause);
+    $('#reset').click(reset);
+    //put text received into box
+    
+    window.setTimeout(function () {
+        $('#input').trigger('change');
+        $('#go').trigger('click');
+    }, 100);
     $(eleContainer).fadeIn(200);
-    debugger;
     $("#close").click(function () {
         $(".box-container").remove();
     });
-    $('#input').val(ToDBC(got));
+    $('#input').val("十九八七六五四三二一开始！" + ToDBC(got));
 }
 
 

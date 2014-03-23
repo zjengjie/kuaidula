@@ -10,4 +10,6 @@
 	border: 2;
 	z-index: 999;
     background-color: antiquewhite;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
