@@ -16,6 +16,7 @@
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
     font-weight:normal !important;
     line-height: normal !important;
+
 }
 
 .box-container #display {
@@ -27,6 +28,7 @@
 	line-height: normal !important;
 	padding-bottom: 40px !important;
 	padding-top: 40px !important;
+	color: black;
 }
 
 .box-container #input{
@@ -35,9 +37,31 @@
 	font-size:14px;
 	font-weight:normal;
 	display: inline !important;
+	background-color: white;
 }
 
 .box-container #close{
 	text-align: left !important;
 	float: left;
+	padding: 4px 4px 4px 4px !important;
+	border: 4px solid antiquewhite !important;
+}
+
+.box-container #speedLabel{
+	color: black !important;
+}
+.box-container #speed{
+	color: black !important;
+	margin: 1px 1px 1px 1px !important;
+	padding: 1px 1px 1px 1px !important;
+}
+.box-container #speedConfigure{
+	color: black !important;
+}
+
+#go{
+	border: 3px solid antiquewhite !important;
+}
+#reset{
+	border: 3px solid antiquewhite !important;
 }

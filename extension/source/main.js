@@ -67,7 +67,7 @@ function ReadWindow(got) {
     $(eleContainer).append("<div><button id='close'>X</button></div>");
     $(eleContainer).append("<div id='display'>快读啦</div>");
     $(eleContainer).append("<div style='text-align: center'><textarea id='input' placeholder='请在此处输入想要阅读的文字' style='width: 80%;'></textarea></div>");
-    $(eleContainer).append("<div style='text-align: center; margin-top: 3px;'><label>Speed:</label><input value='12' type='number' id='speed' style='width: 70px;'>字/秒</div>");
+    $(eleContainer).append("<div id='speedConfigure' style='text-align: center; margin-top: 3px;'><label id='speedLabel'>Speed:</label><input value='12' type='number' id='speed' style='width: 70px;'>字/秒</div>");
     $(eleContainer).append("<div class='row'><div style='align-content:center;text-align: center'><button id='go' style='width: 50%;text-align: center; align-content:center'>快读啦</button></div><div style='align-content:center;text-align: center'><button id='reset' style='width: 50%' >重置</button></div></div>");
 
 
