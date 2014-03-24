@@ -1,11 +1,20 @@
+#kuaidula-box, #kuaidula-box * {
+	/*Reset all css to avoid affacted by outside world*/
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 #kuaidula-box.box-container {
 	display: none;
-	height: 350px;
+	height: 360px;
 	width: 600px;
 	top: 50%;
 	left: 50%;
 	margin-left: -300px;
-	margin-top: -150px;
+	margin-top: -180px;
 	position: fixed;
 	border: 2;
 	z-index: 999;
