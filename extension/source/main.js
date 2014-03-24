@@ -63,6 +63,7 @@ function ReadWindow(got) {
     var eleContainer = document.createElement("div");
     this.eleContainer = eleContainer;
     $(eleContainer).addClass("box-container");
+    $(eleContainer).attr('id', 'kuaidula-box');
     //from kuaidula.com index.php
     $(eleContainer).append("<div><button id='close'>X</button></div>");
     $(eleContainer).append("<div id='display'>快读啦</div>");
