@@ -6,7 +6,6 @@ chrome.runtime.onMessage.addListener(
             ReadWindow(request.keyCode);
         }
     }
-
 );
 
 function ReadWindow(got) {
