@@ -1,20 +1,3 @@
-function fakePost(textstr) {   
-    var form = document.createElement("form");
-    form.setAttribute("method", "post");
-    form.setAttribute("action", "http://kuaidula.com/");
-    var params = {text: textstr};
-    for(var key in params) {
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("type", "hidden");
-        hiddenField.setAttribute("name", key);
-        hiddenField.setAttribute("value", params[key]);
-        form.appendChild(hiddenField);
-    }
-    document.body.appendChild(form);
-    form.submit();
-};
-//minify function
-fakePostCode = fakePost.toString().replace(/(\n|\t)/gm,'');
 function kuaidula(info)
 {
     var highlightedtext = info.selectionText;
@@ -27,10 +10,12 @@ function kuaidula(info)
     });
     //chrome.tabs.create({url: "javascript:" + fakePostCode + "; fakePost('" + escape(highlightedtext) + "');"})
 }
-
-chrome.contextMenus.create(
-    {title: "快读啦", // the title to add to the menu
-    contexts:["selection"], // only add if there is a selection
-    onclick: kuaidula}
-); // the code to run when the title is clicked
+chrome.runtime.onInstalled.addListener(function() {
+    chrome.contextMenus.create(
+        {title: "快读啦", // the title to add to the menu
+        contexts:["selection"], // only add if there is a selection
+        onclick: kuaidula}
+    ); // the code to run when the title is clicked
+})
+chrome.contextMenus.onClicked.addListener(kuaidula);
  

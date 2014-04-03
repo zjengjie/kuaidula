@@ -8,13 +8,11 @@
     "128": "images/icon128.png" 
   },
   "background": { 
-  	"scripts": ["background.js"],
-  	"persistent": false 
+  	"scripts": ["background.js"]
   },
   "permissions" : [
     "contextMenus",
     "tabs",
-    "background",
     "http://*/*",
     "https://*/*"
   ],
