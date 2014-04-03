@@ -49,19 +49,19 @@ if ($_POST['text'] && $_POST['text'] != "") {
 				<h6>Thank you for using our product, did it help you speed up? :-) Take a look at the following, you may have insterest :-)</h6>
 				<hr>
 				<div class="col-sm-3">
-					<a href="https://chrome.google.com/webstore/detail/preview-it/hlnfkjhomcppkfeioacmjjenhlgcbflj" class="btn btn-default btn-sm">Preview It</a>
+					<a href="https://chrome.google.com/webstore/detail/preview-it/hlnfkjhomcppkfeioacmjjenhlgcbflj" class="btn btn-primary btn-sm">Preview It</a>
 					<br>
-					 - a chrome extension to preview pages in popup small window
+					 - 能够帮你预览链接的优雅插件（谷歌浏览器）
 				</div>
 				<div class="col-sm-6">
-					<a href="https://chrome.google.com/webstore/detail/kuaidula%E5%BF%AB%E8%AF%BB%E5%95%A6/eciblbmhipceenpjandbgolgdndlbple" class="btn btn-default btn-sm">快读啦</a>
+					<a href="https://chrome.google.com/webstore/detail/kuaidula%E5%BF%AB%E8%AF%BB%E5%95%A6/eciblbmhipceenpjandbgolgdndlbple" class="btn btn-primary btn-sm">快读啦</a>
 					<br>
 					 - 快读啦谷歌浏览器插件
 				</div>
 				<div class="col-sm-3">
-					<a href="http://timesheettyu.ideati.me/" class="btn btn-default btn-sm">TimeSheettyU</a>
+					<a href="http://ideati.me/idea/send2phone/" class="btn btn-primary btn-sm">Chrome to Phone</a>
 					<br>
-					 - Help you import your CityU Schedule into your phone, weeks differ from weeks
+					 - 如果你有Windows Phone, 想发送链接到手机怎么办？用Chrome to Phone, 在手机上轻松打开链接。
 				</div>
 			</div>
 			<div class="row" style="text-align: center">

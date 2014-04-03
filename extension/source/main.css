@@ -9,12 +9,12 @@
 }
 #kuaidula-box.box-container {
 	display: none;
-	height: 360px;
+	height: 400px;
 	width: 600px;
 	top: 50%;
 	left: 50%;
 	margin-left: -300px;
-	margin-top: -180px;
+	margin-top: -200px;
 	position: fixed;
 	border: 2;
 	z-index: 999;
@@ -41,7 +41,6 @@
 }
 
 #kuaidula-box.box-container #input{
-	padding-top: 20px !important;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size:14px;
 	font-weight:normal;
@@ -54,6 +53,7 @@
 	float: left;
 	padding: 4px 4px 4px 4px !important;
 	border: 4px solid antiquewhite !important;
+	font-size:14px;
 }
 
 #kuaidula-box.box-container #speedLabel{
