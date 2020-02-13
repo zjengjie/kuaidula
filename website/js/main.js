@@ -18,6 +18,19 @@ function ToDBC(txtstring) {
 	return tmp; 
 } 
 $(function(){
+	$("#night").change(function() {
+		if (this.checked) {
+			$("body").css("background-color", "black");
+			$("#display").css("color", "white");
+			$("#input").css("background-color", "grey");
+			$("#speed").css("background-color", "grey");
+		} else {
+			$("body").css("background-color", "antiquewhite");
+			$("#display").css("color", "black");
+			$("#input").css("background-color", "white");
+			$("#speed").css("background-color", "white");
+		}
+	});
 	//read config
 	if (localStorage['speed']){
 		$('#speed').val(localStorage['speed']);
@@ -67,22 +80,8 @@ $(function(){
 		}
 	}
 	$('#reset').click(reset);
-	if (got == "")
-		$('#input').text("十九八七六五四三二一开始！欢迎使用“快读啦”，你可以不用移动你的眼球就能阅读，在屏幕下方也可以下载谷歌浏览器的插件更方便地使用，相信大家已经明白怎么使用了，请尽兴！");
-	else
-		$('#input').text("十九八七六五四三二一开始！" + got);
 	window.setTimeout(function(){
 		$('#input').trigger('change');
 		$('#go').trigger('click');
 	}, 100);
 });
-
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-48583436-1', 'kuaidula.com');
-ga('send', 'pageview');
-
-
